@@ -1,6 +1,7 @@
-ccxt
-pandas
-pandas_ta
-requests
-flask
-numpy
+ccxt==4.2.85
+pandas==2.1.4
+pandas-ta==0.3.14b0
+numpy==1.24.3
+flask==3.0.0
+requests==2.31.0
+gunicorn==21.2.0
