@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: mexc-trading-bot
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn --bind 0.0.0.0:$PORT bot:app
+    envVars:
+      - key: MEXC_API_KEY
+        sync: false
+      - key: MEXC_SECRET_KEY
+        sync: false
+      - key: TELEGRAM_TOKEN
+        sync: false
+      - key: TELEGRAM_CHAT_ID
+        sync: false
+      - key: CHECK_INTERVAL
+        value: "60"
+      - key: FULL_SCAN_INTERVAL
+        value: "900"
+      - key: DEFAULT_RISK_PCT
+        value: "1.0"
+      - key: PORT
+        value: "10000"
